@@ -22,6 +22,8 @@ VarnishdSkillshare::Application.configure do
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
 
+  require 'rack-esi'
+  config.middleware.insert_after( ActionDispatch::Static, Rack::ESI )
 
   # Do not compress assets
   config.assets.compress = false

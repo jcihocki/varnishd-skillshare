@@ -61,4 +61,7 @@ VarnishdSkillshare::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 
+  require 'rack-cache'
+  config.middleware.insert_before( ActionDispatch::Static, Rack::Cache )
+
 end
