@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  before_filter :cache_me, except: :your_ip
+  before_filter :cache_me, only: [:home, :static]
   before_filter :do_esi, only: :home
 
   def home

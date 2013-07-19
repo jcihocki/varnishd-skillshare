@@ -8,7 +8,7 @@ class Private::ApplicationController < ApplicationController
     if params[:auth_token]
       if params[:auth_token] != "XXXXXX"
         # rejects requests with wrong token
-        head :forbidden
+        render text: "Auth secret invalid", status:  :forbidden
       end
       # otherwise, let page render and set caching headers
     else
