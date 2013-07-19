@@ -17,7 +17,7 @@ class Private::ApplicationController < ApplicationController
           if true # Rails.env.development? || request.env['HTTP_X_VARNISHD_SECRET'] == 'rPo7CkECQTW4Pu2UzdpbLk2Rs10mxGPf8W9CQ1k5z2nKXV/aTjls94vdHzlAWwxh'
             do_esi
             # Adds auth token XXXXXX to current url and esi includes it
-            render html: "<esi:include xmlns:esi=\"http://www.edge-delivery.org/esi/1.0\" src=\"#{url_for( auth_token: "XXXXXX" )}\" onerror=\"continue\" />"
+            render text: "<esi:include xmlns:esi=\"http://www.edge-delivery.org/esi/1.0\" src=\"#{url_for( auth_token: "XXXXXX" )}\" onerror=\"continue\" />", content_type: "text/html"
           else
             render text: "Oh no you didn't!", status:  :forbidden
           end
