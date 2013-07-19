@@ -62,7 +62,7 @@ VarnishdSkillshare::Application.configure do
   config.active_support.deprecation = :notify
 
 
-  unless ENV['RAILS_GROUP'] == "assets"
+  unless ENV['RAILS_GROUPS'] == "assets"
     require 'rack-cache'
     config.middleware.insert_before( ActionDispatch::Static, Rack::Cache )
   end
