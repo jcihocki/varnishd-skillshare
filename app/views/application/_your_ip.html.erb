@@ -4,7 +4,7 @@
 
   <% if Rails.env.production? %>
     I think you're in <%  PinPoint.ip( smart_ips.first ).tap { |blk| next if blk.nil? ; %> <%=  blk.city %>, <%=  blk.state %> <% } %>
-    <% shift smart_ips %>
+    <% smart_ips.shift %>
     and your request has been forwarded by:
     <% smart_ips.each do |ip| %>
       <%=  ip %><%  PinPoint.ip( ip ).tap { |blk| next if blk.nil? ; %>, which I think is in <%=  blk.city %>, <%=  blk.state %> <% } %><br/>
