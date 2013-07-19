@@ -33,6 +33,8 @@ end
 group :production do
   gem 'rack-cache'
   gem 'unicorn'
+  gem 'memcachier'
+  gem 'dalli'
 end
 
 gem 'jquery-rails'

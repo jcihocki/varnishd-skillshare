@@ -46,6 +46,7 @@ GEM
       execjs
     coffee-script-source (1.6.3)
     daemons (1.1.9)
+    dalli (2.6.4)
     erubis (2.7.0)
     eventmachine (1.0.0)
     execjs (1.4.0)
@@ -61,6 +62,7 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    memcachier (0.0.2)
     mime-types (1.23)
     mongoid (3.1.4)
       activemodel (~> 3.2)
@@ -139,8 +141,10 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
+  dalli
   database_auth_user!
   jquery-rails
+  memcachier
   mongoid
   pin_point
   rack-cache
