@@ -3,4 +3,8 @@ VarnishdSkillshare::Application.routes.draw do
   match "/your_ip" => "application#your_ip"
 
   match "/static" => "application#static"
+
+  namespace :private do
+    resource :content
+  end
 end

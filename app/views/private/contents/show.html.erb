@@ -1,0 +1,63 @@
+<div id="feed-body" class="container">
+  <div class="row">
+    <div class="span8">
+      <div class="corgi_feed_well">
+        <div class="feed_stacked">
+          <div class="feed_item">
+            <div class="feed_body">
+              <div class="row">
+                <div class="feed_profile_pic">
+                  <img src="<%= asset_path "corgi.jpg" %>" class="meta_image" />
+                </div>
+                <div class="feed_text">
+                  This is very sensitive private content that no one can see if they don't
+                  know the special username and password, but is also static so that it is cacheable.
+                </div>
+              </div>
+            </div>
+            <div class="comment_area">
+              <p>Add a comment</p>
+              <form>
+                <textarea rows="3" class="span6"></textarea><br/>
+                <input type="submit" class="btn" />
+              </form>
+            </div>
+            <hr class="feed_hr" />
+            <div class="bottom_meta">
+              <div class="row">
+                <div class="bottom_left">
+                  <div class="share_wrapper">
+                    <div class="share"><a href="#" class="share_button"><i class="icon-heart"></i></a></div>
+                    <div class="share_hidden">
+                    </div>
+                  </div>
+                </div>
+                <div class="bottom_right">
+                  <a href="#">Corgi_like_bacon1</a> <span>|</span> <a href="#" class="show_comment_link">comment</a> <span>|</span> 2 days ago
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div> <!-- end span8 -->
+    <div class="span4">
+      <div class="corgi_feed_well">
+        <div class="sidebar_header">
+          <div class="sidebar_title">
+            <h4>Explanatory Sidebar</h4>
+          </div>
+        </div>
+        <hr class="feed_hr" />
+        <div class="sidebar_interior">
+          <i class="icon-ok"></i> SSSSHHHHHH! Secrets
+          <br/><br/>
+          <i class="icon-hand-right"></i> Rendered at <%=  Time.now.utc.strftime( "%H:%M:%S" ) %> UTC
+          <br/><br/>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
