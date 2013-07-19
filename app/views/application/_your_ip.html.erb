@@ -10,4 +10,8 @@
       <%=  ip %><%  PinPoint.ip( ip ).tap { |blk| next if blk.nil? ; %>, which I think is in <%=  blk.city %>, <%=  blk.state %> <% } %><br/>
     <% end %>
   <% end %>
+
+  <br/>
+  <br/>
+  Timestamp: <%=  Time.now.to_s %>
 </p>
