@@ -6,6 +6,8 @@ class ApplicationController < ActionController::Base
   end
 
   def static
+    response.headers['Cache-Control'] = "public"
+    response.headers['Expires'] =  1.hour.from_now.httpdate
     render
   end
 end
