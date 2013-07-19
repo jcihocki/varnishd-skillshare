@@ -81,7 +81,7 @@ test:
 production:
   sessions:
     default:
-      uri: <%= ENV['MONGOLAB_URI'] %>
+      uri: <%= ENV['MONGOLAB_URI'] || mongodb://127.0.0.1:27017/derp %>
       options:
         consistency: :string
 
