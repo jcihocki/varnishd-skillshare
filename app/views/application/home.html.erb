@@ -7,10 +7,11 @@
             <div class="feed_body">
               <div class="row">
                 <div class="feed_profile_pic">
-                  <%= image_tag "corgi.jpg", :class => "meta_image" %>
+                  <img src="<%= asset_path "corgi.jpg" %>" class="meta_image" />
                 </div>
                 <div class="feed_text">
-                    <%= render partial: 'your_ip' %>
+                    <%#= render partial: 'your_ip' %>
+                    <esi:include src="/your_ip" onerror="continue" />
                 </div>
               </div>
             </div>
@@ -21,21 +22,13 @@
                 <input type="submit" class="btn" />
               </form>
             </div>
-            <hr class="feed_hr">
+            <hr class="feed_hr" />
             <div class="bottom_meta">
               <div class="row">
                 <div class="bottom_left">
                   <div class="share_wrapper">
                     <div class="share"><a href="#" class="share_button"><i class="icon-heart"></i></a></div>
                     <div class="share_hidden">
-                      <ul class="hover_heart">
-                        <span class="internal_heart"><i class="icon-heart"></i> Share This Post</span>
-                        <div class="social_links">
-                          <li><span><i class="icon-twitter"></i> Twitter</span></li>
-                          <li><span><i class="icon-facebook"></i> Facebook</span></li>
-                          <li><span><i class="icon-pinterest"></i> Pinterest</span></li>
-                        </div>
-                      </ul>
                     </div>
                   </div>
                 </div>

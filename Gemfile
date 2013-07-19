@@ -13,6 +13,8 @@ gem 'mongoid'
 
 gem 'database_auth_user', :git => 'https://github.com/jcihocki/database_auth_user.git', :branch => '1.0'
 
+gem 'unicorn'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -27,12 +29,11 @@ end
 
 group :development do
   gem 'rack-esi'
-  gem 'thin'
+  gem 'unicorn-rails'
 end
 
 group :production do
   gem 'rack-cache'
-  gem 'unicorn'
   gem 'memcachier'
   gem 'dalli'
 end
