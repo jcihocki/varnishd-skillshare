@@ -1,0 +1,13 @@
+<p>
+  <% smart_ips = (request.env['HTTP_X_FORWARDED_FOR'] || request.remote_ip).split( "," ) %>
+  Your ip is <%= smart_ips.first %>   and your user agent is <%=  request.user_agent %><br/>
+
+  <% if Rails.env.production? %>
+    I think you're in <%  PinPoint.ip( smart_ips.first ).tap { |blk| next if blk.nil? ; %> <%=  blk.city %>, <%=  blk.state %> <% } %>
+    <% shift smart_ips %>
+    and your request has been forwarded by:
+    <% smart_ips.each do |ip| %>
+      <%=  ip %>, which I think is in <%  PinPoint.ip( ip ).tap { |blk| next if blk.nil? ; %> <%=  blk.city %>, <%=  blk.state %> <% } %><br/>
+    <% end %>
+  <% end %>
+</p>
