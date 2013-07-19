@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   before_filter :cache_me, except: :your_ip
 
   def home
+    response.headers['X-Varnish-Do-Esi'] = "true"
     render
   end
 
