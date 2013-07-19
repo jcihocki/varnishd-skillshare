@@ -7,7 +7,7 @@
     <% shift smart_ips %>
     and your request has been forwarded by:
     <% smart_ips.each do |ip| %>
-      <%=  ip %>, which I think is in <%  PinPoint.ip( ip ).tap { |blk| next if blk.nil? ; %> <%=  blk.city %>, <%=  blk.state %> <% } %><br/>
+      <%=  ip %><%  PinPoint.ip( ip ).tap { |blk| next if blk.nil? ; %>, which I think is in <%=  blk.city %>, <%=  blk.state %> <% } %><br/>
     <% end %>
   <% end %>
 </p>
