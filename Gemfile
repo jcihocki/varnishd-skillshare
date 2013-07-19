@@ -27,6 +27,7 @@ end
 
 group :development do
   gem 'rack-esi'
+  gem 'thin'
 end
 
 group :production do

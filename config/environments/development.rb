@@ -23,7 +23,7 @@ VarnishdSkillshare::Application.configure do
   config.action_dispatch.best_standards_support = :builtin
 
   require 'rack-esi'
-  config.middleware.insert_after( ActionDispatch::Static, Rack::ESI )
+  config.middleware.insert_after( ActionDispatch::Static, Rack::ESI, :poolsize => 1 )
 
   # Do not compress assets
   config.assets.compress = false
