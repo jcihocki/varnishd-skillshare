@@ -9,12 +9,8 @@ different caching strategy for a new use case.
 == Caching use cases
 
 1. Caching static content.
-
 2. Using ESI to cache pages with private or uncacheable content.
-
-3. Using ESI to cache static content that requires user login, like content
-behind a paywall.
-
+3. Using ESI to cache static content that requires user login, like content behind a paywall.
 4. Using ESI to cache frequently used modules or fragments, like tweets in a timeline.
 
 == About me
