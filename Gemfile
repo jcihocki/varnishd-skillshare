@@ -11,8 +11,6 @@ gem 'pin_point'
 
 gem 'mongoid'
 
-gem 'database_auth_user', :git => 'https://github.com/jcihocki/database_auth_user.git', :branch => '1.0'
-
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
