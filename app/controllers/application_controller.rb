@@ -4,4 +4,8 @@ class ApplicationController < ActionController::Base
   def home
     render
   end
+
+  def static
+    render
+  end
 end
