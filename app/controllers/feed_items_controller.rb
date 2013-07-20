@@ -13,6 +13,7 @@ class FeedItemsController < ApplicationController
       format.esi {
         @item = $redis.hgetall( params[:id] )
         cache_me
+        render "_fragment.html.erb", layout: false
       }
     end
   end
