@@ -68,7 +68,7 @@ module VarnishdSkillshare
     config.threadsafe!
 
     require 'uri'
-    config.redis_url = URI.parse( ENV['REDISTOGO_URL'] || "redis://localhost:27017" )
+    config.redis_url = URI.parse( ENV['REDISTOGO_URL'] || "redis://localhost/" )
 
     Mime::Type.register "text/html", :esi
 

@@ -31,4 +31,6 @@ VarnishdSkillshare::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  $redis = Redis.new host: config.redis_url.host, port: config.redis_url.port, password: config.redis_url.password
 end

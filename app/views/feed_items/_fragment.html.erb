@@ -7,6 +7,7 @@
         </div>
         <div class="feed_text">
           <p><%= item['text'] %></p>
+          <p>Rendered at <%=  Time.now.to_s %></p>
         </div>
       </div>
     </div>
@@ -37,7 +38,7 @@
         </div>
         <div class="bottom_right">
           <a href="#"><%=  item['user_name'] %></a> <span>|</span> <a href="#" class="show_comment_link">comment</a> <span>|</span>
-          <%=  distance_of_time_in_words Time.at( item['created_at'].to_i ) %> ago
+          <%= link_to time_ago_in_words( Time.at( item['created_at'].to_i ) ) + " ago", feed_feed_item_path( item['id'].to_s ) %>
         </div>
       </div>
     </div>

@@ -31,7 +31,7 @@ after_fork do |server, worker|
     puts 'Unicorn worker intercepting TERM and doing nothing. Wait for master to sent QUIT'
   end
 
-  uri = URI.parse Rails.application.config.redis_url
+  uri = $config.redis_url
   $redis = Redis.new host: uri.host, port: uri.port, password: uri.password
 end
 
