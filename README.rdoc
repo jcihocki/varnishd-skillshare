@@ -21,7 +21,7 @@ behind a paywall.
 
 I'm co-founder and CTO of Startup Giraffe. We help non-technical entrepreneurs ship the 
 first versions of their web and mobile startups. We also run varnish as a service in the 
-cloud. Email john at startupgiraffe dot com for a free dev/staging varnishd/esi instance,
+cloud. Email john at startupgiraffe dot com for a free dev/staging varnishd instance,
 pricing information on production plans, or advice on how to vertically scale using varnish
 and ESI. 
 
