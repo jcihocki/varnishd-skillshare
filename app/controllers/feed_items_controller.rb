@@ -1,8 +1,19 @@
 class FeedItemsController < ApplicationController
   def show
-    do_esi
-    cache_me
-    @item = $redis.hgetall( params[:id] )
-    raise ActionController::RoutingError.new( "Not found" ) unless @item
+
+    respond_to do |format|
+      format.html {
+        if params[:id][0] == "X"
+          cache_me
+          do_esi
+        else
+          @item = $redis.hgetall( params[:id] )
+        end
+      }
+      format.esi {
+        @item = $redis.hgetall( params[:id] )
+        cache_me
+      }
+    end
   end
 end

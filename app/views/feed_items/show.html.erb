@@ -1,0 +1,34 @@
+<div id="feed-body" class="container">
+  <div class="row">
+    <div class="span8">
+      <div class="corgi_feed_well">
+        <div class="feed_individual_item">
+          <% if params[:id][0] == "X" %>
+            <esi:include src="<%= url_for( format: 'esi' ) %>" onerror="continue" />
+          <% else %>
+            <%= render partial: "fragment" %>
+          <% end %>
+        </div>
+      </div>
+    </div> <!-- end span8 -->
+    <div class="span4">
+      <div class="corgi_feed_well">
+        <div class="sidebar_header">
+          <div class="sidebar_title">
+            <h4>Explanatory Sidebar</h4>
+          </div>
+        </div>
+        <hr class="feed_hr" />
+        <div class="sidebar_interior">
+          <i class="icon-ok"></i> Note same render time on item from listing page.
+          <br/><br/>
+          <i class="icon-ok"></i> This page <strong>is</strong> cached.
+          <br/><br/>
+          <i class="icon-hand-right"></i> Rendered at <%=  Time.now.utc.strftime( "%H:%M:%S" ) %> UTC
+          <br/><br/>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

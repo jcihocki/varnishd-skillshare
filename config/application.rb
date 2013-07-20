@@ -70,6 +70,8 @@ module VarnishdSkillshare
     require 'uri'
     config.redis_url = URI.parse( ENV['REDISTOGO_URL'] || "redis://localhost:27017" )
 
+    Mime::Type.register "text/html", :esi
+
     $config = config
   end
 end
