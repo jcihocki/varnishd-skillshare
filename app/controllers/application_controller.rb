@@ -25,5 +25,8 @@ class ApplicationController < ActionController::Base
 
   def do_esi
     response.headers['X-Esi-Processing'] = "on"
+    # We do this so that varnish doesn't have to unzip
+    # the content before ESI processing.
+    request.env.delete( 'HTTP_X_ACCEPT_ENCODING' )
   end
 end

@@ -26,8 +26,6 @@ VarnishdSkillshare::Application.configure do
   config.middleware.insert ActionDispatch::Static, Rack::ESI, :poolsize => 1
   config.middleware.insert_before( Rack::ESI, Rack::Deflater  )
 
-  config.threadsafe!
-
   # Do not compress assets
   config.assets.compress = false
 

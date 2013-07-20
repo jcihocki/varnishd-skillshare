@@ -7,4 +7,8 @@ VarnishdSkillshare::Application.routes.draw do
   namespace :private do
     resource :content
   end
+
+  resource :feed do
+    resources :feed_items, :path => "items"
+  end
 end

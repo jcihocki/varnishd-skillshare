@@ -20,8 +20,6 @@ worker_processes 6 # amount of unicorn workers to spin up
 preload_app true
 
 before_fork do |server, worker|
-  $config.threadsafe!
-
   Signal.trap 'TERM' do
     puts 'Unicorn master intercepting TERM and sending myself QUIT instead'
     Process.kill 'QUIT', Process.pid
@@ -32,6 +30,9 @@ after_fork do |server, worker|
   Signal.trap 'TERM' do
     puts 'Unicorn worker intercepting TERM and doing nothing. Wait for master to sent QUIT'
   end
+
+  uri = URI.parse Rails.application.config.redis_url
+  $redis = Redis.new host: uri.host, port: uri.port, password: uri.password
 end
 
 # support streaming

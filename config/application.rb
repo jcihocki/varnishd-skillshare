@@ -65,6 +65,11 @@ module VarnishdSkillshare
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
 
+    config.threadsafe!
+
+    require 'uri'
+    config.redis_url = URI.parse( ENV['REDISTOGO_URL'] || "redis://localhost:27017" )
+
     $config = config
   end
 end
