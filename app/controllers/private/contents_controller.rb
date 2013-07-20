@@ -3,4 +3,6 @@ class Private::ContentsController < Private::ApplicationController
     cache_me
     render
   end
+
+
 end
